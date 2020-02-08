@@ -1,39 +1,41 @@
 plugins {
-    id("com.android.application")
+    id(GradlePluginId.ANDROID_APPLICATION)
     kotlin("android")
     kotlin("android.extensions")
 }
 
 android {
-    compileSdkVersion(29)
-    buildToolsVersion("29.0.2")
+    compileSdkVersion(AndroidConfig.COMPILE_SDK_VERSION)
+    buildToolsVersion(AndroidConfig.BUILD_TOOLS_VERSION)
     defaultConfig {
-        applicationId = "io.github.haniyehkhaksar.clean_architecture"
-        minSdkVersion(16)
-        targetSdkVersion(29)
-        multiDexEnabled = true
-        versionCode = 1
-        versionName = "1.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        applicationId = AndroidConfig.APP_ID
+        minSdkVersion(AndroidConfig.MIN_SDK_VERSION)
+        targetSdkVersion(AndroidConfig.TARGET_SDK_VERSION)
+        versionCode = AndroidConfig.VERSION_CODE
+        versionName = AndroidConfig.VERSION_NAME
+        testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
     }
     buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
+        getByName(BuildType.RELEASE) {
+            isMinifyEnabled = BuildTypeRelease.isMinifyEnabled
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
+        getByName(BuildType.DEBUG) {
+            isMinifyEnabled = BuildTypeDebug.isMinifyEnabled
+            isDebuggable = BuildTypeDebug.isDebuggable
+        }
     }
+
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61")
-    implementation("androidx.appcompat:appcompat:1.0.2")
-    implementation("androidx.core:core-ktx:1.0.2")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test.ext:junit:1.1.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.1.1")
+    implementation(LibraryDependency.KOTLIN)
+    implementation(LibraryDependency.APP_COMPACT)
+    implementation(LibraryDependency.CORE_KTX)
+    implementation(LibraryDependency.SUPPORT_CONSTRAINT_LAYOUT)
+    testImplementation(TestLibraryDependency.JUNIT)
 }
