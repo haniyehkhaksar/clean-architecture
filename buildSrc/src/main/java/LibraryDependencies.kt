@@ -2,6 +2,7 @@ private object LibraryVersion {
     const val APP_COMPACT = "1.1.0"
     const val CONSTRAINT_LAYOUT = "1.1.3"
     const val CORE_KTX = "1.1.0"
+    const val KODEIN = "6.4.0"
 }
 
 object LibraryDependency {
@@ -10,4 +11,7 @@ object LibraryDependency {
         "androidx.constraintlayout:constraintlayout:${LibraryVersion.CONSTRAINT_LAYOUT}"
     const val APP_COMPACT = "androidx.appcompat:appcompat:${LibraryVersion.APP_COMPACT}"
     const val CORE_KTX = "androidx.core:core-ktx:${LibraryVersion.CORE_KTX}"
+    const val KODEIN = "org.kodein.di:kodein-di-generic-jvm:${LibraryVersion.KODEIN}"
+    const val KODEIN_ANDROID_X =
+        "org.kodein.di:kodein-di-framework-android-x:${LibraryVersion.KODEIN}"
 }

@@ -38,4 +38,6 @@ dependencies {
     implementation(LibraryDependency.CORE_KTX)
     implementation(LibraryDependency.SUPPORT_CONSTRAINT_LAYOUT)
     testImplementation(TestLibraryDependency.JUNIT)
+    implementation(LibraryDependency.KODEIN)
+    implementation(LibraryDependency.KODEIN_ANDROID_X)
 }
