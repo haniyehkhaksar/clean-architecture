@@ -1,7 +1,8 @@
-package io.github.haniyehkhaksar.clean_architecture
+package io.github.haniyehkhaksar.clean_architecture.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import io.github.haniyehkhaksar.clean_architecture.R
 
 class MainActivity : AppCompatActivity() {
 

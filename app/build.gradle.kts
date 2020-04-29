@@ -29,6 +29,8 @@ android {
         }
     }
 
+    dataBinding.isEnabled = true
+
 }
 
 dependencies {
@@ -40,4 +42,7 @@ dependencies {
     testImplementation(TestLibraryDependency.JUNIT)
     implementation(LibraryDependency.KODEIN)
     implementation(LibraryDependency.KODEIN_ANDROID_X)
+    implementation(LibraryDependency.FRAGMENT_KTX)
+    implementation(LibraryDependency.LIFECYCLE_EXTENSIONS)
+    implementation(LibraryDependency.LIFECYCLE_VIEW_MODEL_KTX)
 }

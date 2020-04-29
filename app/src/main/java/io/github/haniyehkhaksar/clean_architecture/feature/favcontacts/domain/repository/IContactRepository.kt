@@ -1,0 +1,3 @@
+package io.github.haniyehkhaksar.clean_architecture.feature.favcontacts.domain.repository
+
+interface IContactRepository
