@@ -11,7 +11,7 @@ import org.kodein.di.generic.scoped
 import org.kodein.di.generic.singleton
 
 
-internal val presentationModule = Kodein.Module("${FEATURE_NAME}PresentationModule") {
+internal val presentationModule = Kodein.Module("${FEATURE_NAME}UiModule") {
 
     bind<BluetoothInfoViewModel>() with scoped<Fragment>(AndroidLifecycleScope).singleton {
         KotlinViewModelProvider.of(context) { BluetoothInfoViewModel() }
